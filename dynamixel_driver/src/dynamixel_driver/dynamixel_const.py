@@ -283,5 +283,29 @@ DXL_MODEL_TO_PARAMS = \
            'rpm_per_tick':       0.114,
            'features':           []
          },
+    44: { 'name':               'mark-44',
+           'encoder_resolution': 8192,
+           'range_degrees':      1440.0,
+           'torque_per_volt':    5.3 / 18.5,                       #  5.3 NM @ 18.5V
+           'velocity_per_volt':  (64 * RPM_TO_RADSEC) / 18.5,      #  64 RPM @ 18.5V
+           'rpm_per_tick':       0.114,
+           'features':           []
+         },
+    45: { 'name':               'orion-45',
+           'encoder_resolution': 4096,
+           'range_degrees':      360.0,
+           'torque_per_volt':    5.3 / 18.5,                       #  5.3 NM @ 18.5V
+           'velocity_per_volt':  (64 * RPM_TO_RADSEC) / 18.5,      #  64 RPM @ 18.5V
+           'rpm_per_tick':       0.114,
+           'features':           []
+         },
+    46: { 'name':               'hercules-46',
+           'encoder_resolution': 4096,
+           'range_degrees':      360.0,
+           'torque_per_volt':    5.3 / 18.5,                       #  5.3 NM @ 18.5V
+           'velocity_per_volt':  (64 * RPM_TO_RADSEC) / 18.5,      #  64 RPM @ 18.5V
+           'rpm_per_tick':       0.114,
+           'features':           []
+         },
 }
 
