@@ -293,7 +293,7 @@ DXL_MODEL_TO_PARAMS = \
          },
     45: { 'name':               'orion-45',
            'encoder_resolution': 4096,
-           'range_degrees':      360.0,
+           'range_degrees':      4096.0,
            'torque_per_volt':    5.3 / 18.5,                       #  5.3 NM @ 18.5V
            'velocity_per_volt':  (64 * RPM_TO_RADSEC) / 18.5,      #  64 RPM @ 18.5V
            'rpm_per_tick':       0.114,
