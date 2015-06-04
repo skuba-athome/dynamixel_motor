@@ -53,7 +53,7 @@ class JointPositionWithRatioController(JointPositionController):
     def __init__(self, dxl_io, controller_namespace, port_namespace):
         JointPositionController.__init__(self, dxl_io, controller_namespace, port_namespace)
         
-        self.mechanical_ratio = rospy.get_param(self.controller_namespace + '/motor/ratio')
+        self.mechanical_ratio = rospy.get_param(self.controller_namespace + '/mechanical_ratio')
 
     def process_motor_states(self, state_list):
         if self.running:
