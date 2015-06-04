@@ -43,10 +43,8 @@ __license__ = 'BSD'
 __maintainer__ = 'Krit Chaiso'
 __email__ = 'krit.c@ku.th'
 
-
 import rospy
-
-from dynamixel_controllers.joint_controller import JointPositionController
+from dynamixel_controllers.joint_position_controller import JointPositionController
 
 
 class JointPositionWithRatioController(JointPositionController):
