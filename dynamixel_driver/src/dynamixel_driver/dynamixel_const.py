@@ -323,5 +323,6 @@ DXL_MODEL_TO_PARAMS = \
            'rpm_per_tick':       0.114,
            'features':           []
          },
-}
+    }
+
 
