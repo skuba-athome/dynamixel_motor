@@ -3,7 +3,7 @@
 import subprocess
 import os
 import sys
-from termcolor import colored
+from termcolor.termcolor import colored
 
 if __name__ == '__main__':
     env = os.environ
