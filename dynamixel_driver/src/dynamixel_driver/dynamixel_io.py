@@ -635,7 +635,6 @@ class DynamixelIO(object):
                     'setting a LED to %s' % led_state)
         return response
 
-
     #################################################################
     # These functions can send multiple commands to multiple servos #
     # These commands are used in ROS wrapper as they don't send a   #

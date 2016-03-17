@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+import subprocess
+
+if __name__ == '__main__': 
+    pan = subprocess.Popen(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=5760:0','10'], s24tdout=subprocess.PIPE).encode(u'utf-8')
+    #pan[0]
+    #tilt = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','11'])
+    #shd_in_r = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','20'])
+    #shd_out_r = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','21'])
+    #elb_r = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','22'])
+    #wst1_r = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','40'])
+    #wst2_r = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','41'])
+    #wst3_r = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','42'])
+    #grp_r = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','43'])
+    #shd_in_l = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','25'])
+    #shd_out_l = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','26'])
+    #elb_l = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','27'])
+    #wst1_l = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','45'])
+    #wst2_l = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','46'])
+    #wst3_l = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','47'])
+    #grp_l = subprocess.call(['python','info_dump.py','--port=/dev/ttyUSB0','--baud=57600','48'])   

@@ -1,0 +1,607 @@
+Script started on Wed 02 Dec 2015 10:14:59 AM ICT
+]0;gerbera@gerbera-tetra: ~/skuba_athome/src/dynamixel_motor/dynamixel_drivergerbera@gerbera-tetra:~/skuba_athome/src/dynamixel_motor/dynamixel_driver$ ls
+CHANGELOG.rst   mainpage.dox  [0m[01;34mscripts[0m   [01;34msrc[0m
+CMakeLists.txt  package.xml   setup.py  typescript
+]0;gerbera@gerbera-tetra: ~/skuba_athome/src/dynamixel_motor/dynamixel_drivergerbera@gerbera-tetra:~/skuba_athome/src/dynamixel_motor/dynamixel_driver$ cd sc ripts/
+]0;gerbera@gerbera-tetra: ~/skuba_athome/src/dynamixel_motor/dynamixel_driver/scriptsgerbera@gerbera-tetra:~/skuba_athome/src/dynamixel_motor/dynamixel_driver/scriptss$ ls
+[0m[01;32mchange_id.py[0m              [01;32minfo_dump.py[0m         [01;32mset_torque.py[0m
+[01;32mcheck_dynamixels.py[0m       README               subprocess
+[01;32mcheck_dynamixels.py.save[0m  [01;32mset_servo_config.py[0m  [01;34mtermcolor-1.1.0[0m
+]0;gerbera@gerbera-tetra: ~/skuba_athome/src/dynamixel_motor/dynamixel_driver/scriptsgerbera@gerbera-tetra:~/skuba_athome/src/dynamixel_motor/dynamixel_driver/scriptss$ cd[K[K./info_dump.py 
+Usage: info_dump.py [options] IDs
+
+Prints the current status of specified Dynamixel servo motors.
+
+Options:
+  -h, --help            show this help message and exit
+  -p PORT, --port=PORT  motors of specified controllers are connected to PORT
+                        [default: /dev/ttyUSB0]
+  -b BAUD, --baud=BAUD  connection to serial port will be established at BAUD
+                        bps [default: 1000000]
+
+Example: ./info_dump.py --port=/dev/ttyUSB1 --baud=57600 1 2 3 4 5
+]0;gerbera@gerbera-tetra: ~/skuba_athome/src/dynamixel_motor/dynamixel_driver/scriptsgerbera@gerbera-tetra:~/skuba_athome/src/dynamixel_motor/dynamixel_driver/scriptss$ ls
+[0m[01;32mchange_id.py[0m              [01;32minfo_dump.py[0m         [01;32mset_torque.py[0m
+[01;32mcheck_dynamixels.py[0m       README               subprocess
+[01;32mcheck_dynamixels.py.save[0m  [01;32mset_servo_config.py[0m  [01;34mtermcolor-1.1.0[0m
+]0;gerbera@gerbera-tetra: ~/skuba_athome/src/dynamixel_motor/dynamixel_driver/scriptsgerbera@gerbera-tetra:~/skuba_athome/src/dynamixel_motor/dynamixel_driver/scriptss$ ./info_dump.py --port=/dev/ttyUSB1 --baud=57600 1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K25[K7
+Pinging motors:
+27 ... done
+    Motor 27 is connected:
+        Freespin: False
+        Model ------------------- mark-44 (firmware version: 10)
+        Min Angle --------------- 23420
+        Max Angle --------------- 44800
+        Current Position -------- 27199
+        Current Speed ----------- -31745
+        Current Temperature ----- 33°C
+        Current Voltage --------- 23.6v
+        Current Load ------------ 0
+        Moving ------------------ False
+
+]0;gerbera@gerbera-tetra: ~/skuba_athome/src/dynamixel_motor/dynamixel_driver/scriptsgerbera@gerbera-tetra:~/skuba_athome/src/dynamixel_motor/dynamixel_driver/scriptss$ ./info_dump.py --port=/dev/ttyUSB1 --baud=57600 27[C[C[Cls[K./info_dump.py [C[C[Cls[Kcd scripts/[C[C[Cls[K./controller_tester.py [C[C[Croscd main_state/new_nodes/[C[C[C[C[C[Claunch main_state today_show.launch [C[C[C[C[C[C[C[C[C[C[C[C[C[21@athome_navigation_follow navigation_foll[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[21Pmain_state today_sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Pcd main_state/new_nodes/[C[C[C[4P./controller_tester.py [C[C[Cls[Kcd scripts/[C[C[Cls[K./info_dump.py [C[C[Cls[K./info_dump.py --port=/dev/ttyUSB1 --baud=57600 27[C[C[C[Kclear
+[H[2J]0;gerbera@gerbera-tetra: ~/skuba_athome/src/dynamixel_motor/dynamixel_driver/scriptsgerbera@gerbera-tetra:~/skuba_athome/src/dynamixel_motor/dynamixel_driver/scriptss$ roslay[Kunch hardware_bridge hardware_bridge.launch 
+... logging to /home/gerbera/.ros/log/2016b438-98a3-11e5-ab4d-9c2a70c93123/roslaunch-gerbera-tetra-3192.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+[31mWARNING: disk usage in log directory [/home/gerbera/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+]2;/home/gerbera/skuba_athome/src/hardware_bridge/launch/hardware_bridge.launch
+[1mstarted roslaunch server http://gerbera-tetra:43253/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /camera/camera_nodelet_manager/num_worker_threads
+ * /camera/depth_rectify_depth/interpolation
+ * /camera/depth_registered_rectify_depth/interpolation
+ * /camera/disparity_depth/max_range
+ * /camera/disparity_depth/min_range
+ * /camera/disparity_registered_hw/max_range
+ * /camera/disparity_registered_hw/min_range
+ * /camera/disparity_registered_sw/max_range
+ * /camera/disparity_registered_sw/min_range
+ * /camera/driver/depth_camera_info_url
+ * /camera/driver/depth_frame_id
+ * /camera/driver/depth_registration
+ * /camera/driver/device_id
+ * /camera/driver/rgb_camera_info_url
+ * /camera/driver/rgb_frame_id
+ * /depth_registered/depth_registered_rectify_depth/interpolation
+ * /dynamixel/dynamixel_manager/namespace
+ * /dynamixel/dynamixel_manager/serial_ports/actuator_port/baud_rate
+ * /dynamixel/dynamixel_manager/serial_ports/actuator_port/max_motor_id
+ * /dynamixel/dynamixel_manager/serial_ports/actuator_port/min_motor_id
+ * /dynamixel/dynamixel_manager/serial_ports/actuator_port/port_name
+ * /dynamixel/dynamixel_manager/serial_ports/actuator_port/update_rate
+ * /dynamixel/joint_state_publisher/motors_list
+ * /dynamixel/joint_state_publisher/urdf_file_path
+ * /dynamixel/left_arm_controller/controller/module
+ * /dynamixel/left_arm_controller/controller/package
+ * /dynamixel/left_arm_controller/controller/type
+ * /dynamixel/left_arm_controller/joint_trajectory_action_node/constraints/goal_time
+ * /dynamixel/left_arm_controller/joint_trajectory_action_node/min_velocity
+ * /dynamixel/left_elbow_controller/controller/module
+ * /dynamixel/left_elbow_controller/controller/package
+ * /dynamixel/left_elbow_controller/controller/type
+ * /dynamixel/left_elbow_controller/joint_name
+ * /dynamixel/left_elbow_controller/joint_speed
+ * /dynamixel/left_elbow_controller/motor/id
+ * /dynamixel/left_elbow_controller/motor/init
+ * /dynamixel/left_elbow_controller/motor/max
+ * /dynamixel/left_elbow_controller/motor/min
+ * /dynamixel/left_gripper_controller/controller/module
+ * /dynamixel/left_gripper_controller/controller/package
+ * /dynamixel/left_gripper_controller/controller/type
+ * /dynamixel/left_gripper_controller/gripper_command_action_node/constraints/effort_tolerance
+ * /dynamixel/left_gripper_controller/gripper_command_action_node/constraints/goal_tolerance
+ * /dynamixel/left_gripper_controller/gripper_command_action_node/constraints/velocity
+ * /dynamixel/left_gripper_joint_controller/controller/module
+ * /dynamixel/left_gripper_joint_controller/controller/package
+ * /dynamixel/left_gripper_joint_controller/controller/type
+ * /dynamixel/left_gripper_joint_controller/joint_name
+ * /dynamixel/left_gripper_joint_controller/joint_speed
+ * /dynamixel/left_gripper_joint_controller/joint_torque_limit
+ * /dynamixel/left_gripper_joint_controller/motor/id
+ * /dynamixel/left_gripper_joint_controller/motor/init
+ * /dynamixel/left_gripper_joint_controller/motor/max
+ * /dynamixel/left_gripper_joint_controller/motor/min
+ * /dynamixel/left_shoulder_1_controller/controller/module
+ * /dynamixel/left_shoulder_1_controller/controller/package
+ * /dynamixel/left_shoulder_1_controller/controller/type
+ * /dynamixel/left_shoulder_1_controller/joint_name
+ * /dynamixel/left_shoulder_1_controller/joint_speed
+ * /dynamixel/left_shoulder_1_controller/motor/id
+ * /dynamixel/left_shoulder_1_controller/motor/init
+ * /dynamixel/left_shoulder_1_controller/motor/max
+ * /dynamixel/left_shoulder_1_controller/motor/min
+ * /dynamixel/left_shoulder_2_controller/controller/module
+ * /dynamixel/left_shoulder_2_controller/controller/package
+ * /dynamixel/left_shoulder_2_controller/controller/type
+ * /dynamixel/left_shoulder_2_controller/joint_name
+ * /dynamixel/left_shoulder_2_controller/joint_speed
+ * /dynamixel/left_shoulder_2_controller/motor/id
+ * /dynamixel/left_shoulder_2_controller/motor/init
+ * /dynamixel/left_shoulder_2_controller/motor/max
+ * /dynamixel/left_shoulder_2_controller/motor/min
+ * /dynamixel/left_wrist_1_controller/controller/module
+ * /dynamixel/left_wrist_1_controller/controller/package
+ * /dynamixel/left_wrist_1_controller/controller/type
+ * /dynamixel/left_wrist_1_controller/joint_name
+ * /dynamixel/left_wrist_1_controller/joint_speed
+ * /dynamixel/left_wrist_1_controller/joint_torque_limit
+ * /dynamixel/left_wrist_1_controller/motor/id
+ * /dynamixel/left_wrist_1_controller/motor/init
+ * /dynamixel/left_wrist_1_controller/motor/max
+ * /dynamixel/left_wrist_1_controller/motor/min
+ * /dynamixel/left_wrist_2_controller/controller/module
+ * /dynamixel/left_wrist_2_controller/controller/package
+ * /dynamixel/left_wrist_2_controller/controller/type
+ * /dynamixel/left_wrist_2_controller/joint_name
+ * /dynamixel/left_wrist_2_controller/joint_speed
+ * /dynamixel/left_wrist_2_controller/joint_torque_limit
+ * /dynamixel/left_wrist_2_controller/motor/id
+ * /dynamixel/left_wrist_2_controller/motor/init
+ * /dynamixel/left_wrist_2_controller/motor/max
+ * /dynamixel/left_wrist_2_controller/motor/min
+ * /dynamixel/left_wrist_3_controller/controller/module
+ * /dynamixel/left_wrist_3_controller/controller/package
+ * /dynamixel/left_wrist_3_controller/controller/type
+ * /dynamixel/left_wrist_3_controller/joint_name
+ * /dynamixel/left_wrist_3_controller/joint_speed
+ * /dynamixel/left_wrist_3_controller/joint_torque_limit
+ * /dynamixel/left_wrist_3_controller/motor/id
+ * /dynamixel/left_wrist_3_controller/motor/init
+ * /dynamixel/left_wrist_3_controller/motor/max
+ * /dynamixel/left_wrist_3_controller/motor/min
+ * /dynamixel/neck_controller/controller/module
+ * /dynamixel/neck_controller/controller/package
+ * /dynamixel/neck_controller/controller/type
+ * /dynamixel/neck_controller/joint_trajectory_action_node/constraints/goal_time
+ * /dynamixel/neck_controller/joint_trajectory_action_node/min_velocity
+ * /dynamixel/pan_controller/controller/module
+ * /dynamixel/pan_controller/controller/package
+ * /dynamixel/pan_controller/controller/type
+ * /dynamixel/pan_controller/joint_name
+ * /dynamixel/pan_controller/joint_speed
+ * /dynamixel/pan_controller/motor/id
+ * /dynamixel/pan_controller/motor/init
+ * /dynamixel/pan_controller/motor/max
+ * /dynamixel/pan_controller/motor/min
+ * /dynamixel/prismatic_controller/controller/module
+ * /dynamixel/prismatic_controller/controller/package
+ * /dynamixel/prismatic_controller/controller/type
+ * /dynamixel/prismatic_controller/joint_name
+ * /dynamixel/prismatic_controller/joint_speed
+ * /dynamixel/prismatic_controller/motor/id
+ * /dynamixel/prismatic_controller/motor/init
+ * /dynamixel/prismatic_controller/motor/max
+ * /dynamixel/prismatic_controller/motor/min
+ * /dynamixel/right_arm_controller/controller/module
+ * /dynamixel/right_arm_controller/controller/package
+ * /dynamixel/right_arm_controller/controller/type
+ * /dynamixel/right_arm_controller/joint_trajectory_action_node/constraints/goal_time
+ * /dynamixel/right_arm_controller/joint_trajectory_action_node/min_velocity
+ * /dynamixel/right_elbow_controller/controller/module
+ * /dynamixel/right_elbow_controller/controller/package
+ * /dynamixel/right_elbow_controller/controller/type
+ * /dynamixel/right_elbow_controller/joint_name
+ * /dynamixel/right_elbow_controller/joint_speed
+ * /dynamixel/right_elbow_controller/motor/id
+ * /dynamixel/right_elbow_controller/motor/init
+ * /dynamixel/right_elbow_controller/motor/max
+ * /dynamixel/right_elbow_controller/motor/min
+ * /dynamixel/right_gripper_controller/controller/module
+ * /dynamixel/right_gripper_controller/controller/package
+ * /dynamixel/right_gripper_controller/controller/type
+ * /dynamixel/right_gripper_controller/gripper_command_action_node/constraints/effort_tolerance
+ * /dynamixel/right_gripper_controller/gripper_command_action_node/constraints/goal_tolerance
+ * /dynamixel/right_gripper_controller/gripper_command_action_node/constraints/velocity
+ * /dynamixel/right_gripper_joint_controller/controller/module
+ * /dynamixel/right_gripper_joint_controller/controller/package
+ * /dynamixel/right_gripper_joint_controller/controller/type
+ * /dynamixel/right_gripper_joint_controller/joint_name
+ * /dynamixel/right_gripper_joint_controller/joint_speed
+ * /dynamixel/right_gripper_joint_controller/joint_torque_limit
+ * /dynamixel/right_gripper_joint_controller/motor/id
+ * /dynamixel/right_gripper_joint_controller/motor/init
+ * /dynamixel/right_gripper_joint_controller/motor/max
+ * /dynamixel/right_gripper_joint_controller/motor/min
+ * /dynamixel/right_shoulder_1_controller/controller/module
+ * /dynamixel/right_shoulder_1_controller/controller/package
+ * /dynamixel/right_shoulder_1_controller/controller/type
+ * /dynamixel/right_shoulder_1_controller/joint_name
+ * /dynamixel/right_shoulder_1_controller/joint_speed
+ * /dynamixel/right_shoulder_1_controller/motor/id
+ * /dynamixel/right_shoulder_1_controller/motor/init
+ * /dynamixel/right_shoulder_1_controller/motor/max
+ * /dynamixel/right_shoulder_1_controller/motor/min
+ * /dynamixel/right_shoulder_2_controller/controller/module
+ * /dynamixel/right_shoulder_2_controller/controller/package
+ * /dynamixel/right_shoulder_2_controller/controller/type
+ * /dynamixel/right_shoulder_2_controller/joint_name
+ * /dynamixel/right_shoulder_2_controller/joint_speed
+ * /dynamixel/right_shoulder_2_controller/motor/id
+ * /dynamixel/right_shoulder_2_controller/motor/init
+ * /dynamixel/right_shoulder_2_controller/motor/max
+ * /dynamixel/right_shoulder_2_controller/motor/min
+ * /dynamixel/right_wrist_1_controller/controller/module
+ * /dynamixel/right_wrist_1_controller/controller/package
+ * /dynamixel/right_wrist_1_controller/controller/type
+ * /dynamixel/right_wrist_1_controller/joint_name
+ * /dynamixel/right_wrist_1_controller/joint_speed
+ * /dynamixel/right_wrist_1_controller/joint_torque_limit
+ * /dynamixel/right_wrist_1_controller/motor/id
+ * /dynamixel/right_wrist_1_controller/motor/init
+ * /dynamixel/right_wrist_1_controller/motor/max
+ * /dynamixel/right_wrist_1_controller/motor/min
+ * /dynamixel/right_wrist_2_controller/controller/module
+ * /dynamixel/right_wrist_2_controller/controller/package
+ * /dynamixel/right_wrist_2_controller/controller/type
+ * /dynamixel/right_wrist_2_controller/joint_name
+ * /dynamixel/right_wrist_2_controller/joint_speed
+ * /dynamixel/right_wrist_2_controller/joint_torque_limit
+ * /dynamixel/right_wrist_2_controller/motor/id
+ * /dynamixel/right_wrist_2_controller/motor/init
+ * /dynamixel/right_wrist_2_controller/motor/max
+ * /dynamixel/right_wrist_2_controller/motor/min
+ * /dynamixel/right_wrist_3_controller/controller/module
+ * /dynamixel/right_wrist_3_controller/controller/package
+ * /dynamixel/right_wrist_3_controller/controller/type
+ * /dynamixel/right_wrist_3_controller/joint_name
+ * /dynamixel/right_wrist_3_controller/joint_speed
+ * /dynamixel/right_wrist_3_controller/joint_torque_limit
+ * /dynamixel/right_wrist_3_controller/motor/id
+ * /dynamixel/right_wrist_3_controller/motor/init
+ * /dynamixel/right_wrist_3_controller/motor/max
+ * /dynamixel/right_wrist_3_controller/motor/min
+ * /dynamixel/tilt_controller/controller/module
+ * /dynamixel/tilt_controller/controller/package
+ * /dynamixel/tilt_controller/controller/type
+ * /dynamixel/tilt_controller/joint_name
+ * /dynamixel/tilt_controller/joint_speed
+ * /dynamixel/tilt_controller/motor/id
+ * /dynamixel/tilt_controller/motor/init
+ * /dynamixel/tilt_controller/motor/max
+ * /dynamixel/tilt_controller/motor/min
+ * /dynamixel/torso_controller/controller/module
+ * /dynamixel/torso_controller/controller/package
+ * /dynamixel/torso_controller/controller/type
+ * /dynamixel/torso_controller/joint_trajectory_action_node/constraints/goal_time
+ * /dynamixel/torso_controller/joint_trajectory_action_node/min_velocity
+ * /external_cam/camera/auto_exposure
+ * /external_cam/camera/auto_focus
+ * /external_cam/camera/auto_white_balance
+ * /external_cam/camera/camera_info_url
+ * /external_cam/camera/frame_id
+ * /external_cam/camera/frame_rate
+ * /external_cam/camera/height
+ * /external_cam/camera/index
+ * /external_cam/camera/product
+ * /external_cam/camera/serial
+ * /external_cam/camera/timestamp_method
+ * /external_cam/camera/vendor
+ * /external_cam/camera/video_mode
+ * /external_cam/camera/width
+ * /joy/joy_node/deadzone
+ * /laser/base_laser/angle_max
+ * /laser/base_laser/angle_min
+ * /laser/base_laser/frame_id
+ * /laser/base_laser/publish_intensity
+ * /laser/base_laser/serial_baud
+ * /laser/base_laser/serial_port
+ * /robot_description
+ * /rosdistro
+ * /rosversion
+
+NODES
+  /dynamixel/
+    dynamixel_controller_spawner (dynamixel_controllers/controller_spawner.py)
+    dynamixel_manager (dynamixel_controllers/controller_manager.py)
+    joint_state_publisher (hardware_bridge/joint_state_publisher.py)
+    left_arm_controller (dynamixel_controllers/controller_spawner.py)
+    left_gripper_controller (dynamixel_controllers/controller_spawner.py)
+    neck_controller (dynamixel_controllers/controller_spawner.py)
+    right_arm_controller (dynamixel_controllers/controller_spawner.py)
+    right_gripper_controller (dynamixel_controllers/controller_spawner.py)
+    torso_controller (dynamixel_controllers/controller_spawner.py)
+  /base/
+    base_serial (hardware_bridge/base_serial.py)
+    odometry_est (hardware_bridge/odometry_est.py)
+  /tf/
+    external_cam_to_kinect (tf/static_transform_publisher)
+  /
+    camera_base_link (tf/static_transform_publisher)
+    camera_base_link1 (tf/static_transform_publisher)
+    camera_base_link2 (tf/static_transform_publisher)
+    camera_base_link3 (tf/static_transform_publisher)
+    robot_state_publisher (robot_state_publisher/robot_state_publisher)
+  /joy/
+    joy_input (hardware_bridge/joy_input.py)
+    joy_node (joy/joy_node)
+  /camera/
+    camera_nodelet_manager (nodelet/nodelet)
+    debayer (nodelet/nodelet)
+    depth_metric (nodelet/nodelet)
+    depth_metric_rect (nodelet/nodelet)
+    depth_points (nodelet/nodelet)
+    depth_rectify_depth (nodelet/nodelet)
+    depth_registered_rectify_depth (nodelet/nodelet)
+    disparity_depth (nodelet/nodelet)
+    disparity_registered_hw (nodelet/nodelet)
+    disparity_registered_sw (nodelet/nodelet)
+    driver (nodelet/nodelet)
+    points_xyzrgb_hw_registered (nodelet/nodelet)
+    points_xyzrgb_sw_registered (nodelet/nodelet)
+    rectify_color (nodelet/nodelet)
+    rectify_ir (nodelet/nodelet)
+    rectify_mono (nodelet/nodelet)
+    register_depth_rgb (nodelet/nodelet)
+  /depth_registered/
+    depth_registered_rectify_depth (nodelet/nodelet)
+    nodelet_manager (nodelet/nodelet)
+    points_xyzrgb_hw_registered (nodelet/nodelet)
+    points_xyzrgb_sw_registered (nodelet/nodelet)
+    register_depth_registered (nodelet/nodelet)
+  /laser/
+    base_laser (urg_node/urg_node)
+  /external_cam/
+    camera (libuvc_camera/camera_node)
+    debayer (nodelet/nodelet)
+    image_view (image_view/image_view)
+    nodelet_manager (nodelet/nodelet)
+    rectify_color (nodelet/nodelet)
+    rectify_mono (nodelet/nodelet)
+
+auto-starting new master
+[1mprocess[master]: started with pid [3206][0m
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/gerbera/skuba_athome/src/hardware_bridge/launch/hardware_bridge.launch http://localhost:11311
+[1msetting /run_id to 2016b438-98a3-11e5-ab4d-9c2a70c93123[0m
+[1mprocess[rosout-1]: started with pid [3219][0m
+started core service [/rosout]
+[1mprocess[joy/joy_node-2]: started with pid [3231][0m
+[1mprocess[joy/joy_input-3]: started with pid [3250][0m
+[1mprocess[base/base_serial-4]: started with pid [3253][0m
+[1mprocess[base/odometry_est-5]: started with pid [3260][0m
+[1mprocess[laser/base_laser-6]: started with pid [3277][0m
+Start connection
+[1mprocess[dynamixel/dynamixel_manager-7]: started with pid [3313][0m
+[1mprocess[dynamixel/dynamixel_controller_spawner-8]: started with pid [3317][0m
+[1mprocess[dynamixel/neck_controller-9]: started with pid [3334][0m
+[INFO] [WallTime: 1449026212.263171] actuator_port controller_spawner: waiting for controller_manager dxl_manager to startup in /dynamixel/ namespace...
+[1mprocess[dynamixel/torso_controller-10]: started with pid [3348][0m
+[INFO] [WallTime: 1449026212.299569] actuator_port: Pinging motor IDs 1 through 50...
+[1mprocess[dynamixel/right_arm_controller-11]: started with pid [3365][0m
+[INFO] [WallTime: 1449026212.429334] meta controller_spawner: waiting for controller_manager dxl_manager to startup in /dynamixel/ namespace...
+[INFO] [WallTime: 1449026212.528410] meta controller_spawner: waiting for controller_manager dxl_manager to startup in /dynamixel/ namespace...
+[1mprocess[dynamixel/left_arm_controller-12]: started with pid [3384][0m
+[1mprocess[dynamixel/right_gripper_controller-13]: started with pid [3390][0m
+[INFO] [WallTime: 1449026212.716396] meta controller_spawner: waiting for controller_manager dxl_manager to startup in /dynamixel/ namespace...
+[INFO] [WallTime: 1449026212.722495] meta controller_spawner: waiting for controller_manager dxl_manager to startup in /dynamixel/ namespace...
+[1mprocess[dynamixel/left_gripper_controller-14]: started with pid [3411][0m
+[1mprocess[camera/camera_nodelet_manager-15]: started with pid [3417][0m
+[INFO] [WallTime: 1449026212.985336] meta controller_spawner: waiting for controller_manager dxl_manager to startup in /dynamixel/ namespace...
+[0m[ INFO] [1449026213.026865657]: Initializing nodelet with 4 worker threads.[0m
+[1mprocess[camera/driver-16]: started with pid [3450][0m
+[INFO] [WallTime: 1449026213.095919] meta controller_spawner: waiting for controller_manager dxl_manager to startup in /dynamixel/ namespace...
+[0m[ INFO] [1449026213.148869924]: Connected to serial device with ID: H1316105[0m
+[1mprocess[camera/debayer-17]: started with pid [3476][0m
+[1mprocess[camera/rectify_mono-18]: started with pid [3496][0m
+[0m[ INFO] [1449026213.388570683]: Streaming data.[0m
+[1mprocess[camera/rectify_color-19]: started with pid [3541][0m
+[1mprocess[camera/rectify_ir-20]: started with pid [3557][0m
+[1mprocess[camera/depth_rectify_depth-21]: started with pid [3575][0m
+[1mprocess[camera/depth_metric_rect-22]: started with pid [3591][0m
+[1mprocess[camera/depth_metric-23]: started with pid [3606][0m
+[1mprocess[camera/depth_points-24]: started with pid [3624][0m
+[1mprocess[camera/register_depth_rgb-25]: started with pid [3640][0m
+[1mprocess[camera/points_xyzrgb_sw_registered-26]: started with pid [3655][0m
+[1mprocess[camera/depth_registered_rectify_depth-27]: started with pid [3673][0m
+[1mprocess[camera/points_xyzrgb_hw_registered-28]: started with pid [3690][0m
+[1mprocess[camera/disparity_depth-29]: started with pid [3705][0m
+[1mprocess[camera/disparity_registered_sw-30]: started with pid [3722][0m
+[1mprocess[camera/disparity_registered_hw-31]: started with pid [3739][0m
+[1mprocess[camera_base_link-32]: started with pid [3756][0m
+[1mprocess[camera_base_link1-33]: started with pid [3773][0m
+[0m[ INFO] [1449026215.020131834]: Number devices connected: 1[0m
+[0m[ INFO] [1449026215.020232108]: 1. device on bus 003:18 is a SensorV2 (2ae) from PrimeSense (45e) with serial id '0000000000000000'[0m
+[0m[ INFO] [1449026215.021089776]: Searching for device with index = 1[0m
+[1mprocess[camera_base_link2-34]: started with pid [3789][0m
+[0m[ INFO] [1449026215.058873128]: Opened 'SensorV2' on bus 3:18 with serial number '0000000000000000'[0m
+[1mprocess[camera_base_link3-35]: started with pid [3847][0m
+[1mprocess[external_cam/camera-36]: started with pid [3917][0m
+[1mprocess[external_cam/image_view-37]: started with pid [4023][0m
+[1mprocess[external_cam/nodelet_manager-38]: started with pid [4133][0m
+[0m[ INFO] [1449026215.681433104]: rgb_frame_id = '/camera_rgb_optical_frame' [0m
+[0m[ INFO] [1449026215.681556466]: depth_frame_id = '/camera_depth_optical_frame' [0m
+[33m[ WARN] [1449026215.692148458]: Camera calibration file /home/gerbera/.ros/camera_info/rgb_0000000000000000.yaml not found.[0m
+[33m[ WARN] [1449026215.692340526]: Using default parameters for RGB camera calibration.[0m
+[33m[ WARN] [1449026215.692569509]: Camera calibration file /home/gerbera/.ros/camera_info/depth_0000000000000000.yaml not found.[0m
+[33m[ WARN] [1449026215.692761208]: Using default parameters for IR camera calibration.[0m
+[1mprocess[external_cam/debayer-39]: started with pid [4226][0m
+[1mprocess[external_cam/rectify_mono-40]: started with pid [4304][0m
+[1mprocess[external_cam/rectify_color-41]: started with pid [4411][0m
+[INFO] [WallTime: 1449026216.275715] actuator_port: Found 16 motors - 3 marijuana-48 [20, 25, 26], 4 mark-44 [21, 22, 27, 50], 7 MX-28 [10, 11, 40, 42, 43, 45, 47], 2 MX-64 [41, 46], initialization complete.
+[INFO] [WallTime: 1449026216.315747] meta controller_spawner: All services are up, spawning controllers...
+[INFO] [WallTime: 1449026216.349902] meta controller_spawner: All services are up, spawning controllers...
+[INFO] [WallTime: 1449026216.357920] meta controller_spawner: All services are up, spawning controllers...
+[33m[WARN] [WallTime: 1449026216.368438] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026216.371995] meta controller_spawner: All services are up, spawning controllers...
+[INFO] [WallTime: 1449026216.373492] 
+[33m[WARN] [WallTime: 1449026216.381631] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.382029] [right_arm_controller] not all dependencies started, still waiting for ['right_shoulder_2_controller', 'right_shoulder_1_controller', 'right_wrist_2_controller', 'right_wrist_1_controller', 'right_wrist_3_controller', 'right_elbow_controller']...
+[0m[INFO] [WallTime: 1449026216.382540] 
+[33m[WARN] [WallTime: 1449026216.386627] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.387004] [right_arm_controller] not all dependencies started, still waiting for ['right_shoulder_2_controller', 'right_shoulder_1_controller', 'right_wrist_2_controller', 'right_wrist_1_controller', 'right_wrist_3_controller', 'right_elbow_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.387322] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[INFO] [WallTime: 1449026216.387791] 
+[33m[WARN] [WallTime: 1449026216.390727] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.391148] [right_arm_controller] not all dependencies started, still waiting for ['right_shoulder_2_controller', 'right_shoulder_1_controller', 'right_wrist_2_controller', 'right_wrist_1_controller', 'right_wrist_3_controller', 'right_elbow_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.391577] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.392112] [neck_controller] not all dependencies started, still waiting for ['pan_controller', 'tilt_controller']...
+[0m[INFO] [WallTime: 1449026216.392684] 
+[INFO] [WallTime: 1449026216.426461] meta controller_spawner: All services are up, spawning controllers...
+[33m[WARN] [WallTime: 1449026216.432281] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.432644] [right_arm_controller] not all dependencies started, still waiting for ['right_shoulder_2_controller', 'right_shoulder_1_controller', 'right_wrist_2_controller', 'right_wrist_1_controller', 'right_wrist_3_controller', 'right_elbow_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.432903] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.433184] [neck_controller] not all dependencies started, still waiting for ['pan_controller', 'tilt_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.433448] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026216.434487] 
+[1mprocess[depth_registered/nodelet_manager-42]: started with pid [4515][0m
+[INFO] [WallTime: 1449026216.461887] meta controller_spawner: All services are up, spawning controllers...
+[33m[WARN] [WallTime: 1449026216.478509] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.478957] [right_arm_controller] not all dependencies started, still waiting for ['right_shoulder_2_controller', 'right_shoulder_1_controller', 'right_wrist_2_controller', 'right_wrist_1_controller', 'right_wrist_3_controller', 'right_elbow_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.479616] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.480004] [neck_controller] not all dependencies started, still waiting for ['pan_controller', 'tilt_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.480349] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.480692] [torso_controller] not all dependencies started, still waiting for ['prismatic_controller']...
+[0m[INFO] [WallTime: 1449026216.483356] 
+[INFO] [WallTime: 1449026216.501371] actuator_port controller_spawner: All services are up, spawning controllers...
+[1m[dynamixel/left_arm_controller-12] process has finished cleanly
+log file: /home/gerbera/.ros/log/2016b438-98a3-11e5-ab4d-9c2a70c93123/dynamixel-left_arm_controller-12*.log[0m
+[33m[WARN] [WallTime: 1449026216.609393] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.609794] [right_arm_controller] not all dependencies started, still waiting for ['right_shoulder_2_controller', 'right_shoulder_1_controller', 'right_wrist_2_controller', 'right_wrist_1_controller', 'right_wrist_3_controller', 'right_elbow_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.610100] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.610401] [neck_controller] not all dependencies started, still waiting for ['tilt_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.610696] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.610986] [torso_controller] not all dependencies started, still waiting for ['prismatic_controller']...
+[0m[INFO] [WallTime: 1449026216.611798] Controller pan_controller successfully started.
+[1mprocess[depth_registered/register_depth_registered-43]: started with pid [4606][0m
+[1m[dynamixel/neck_controller-9] process has finished cleanly
+log file: /home/gerbera/.ros/log/2016b438-98a3-11e5-ab4d-9c2a70c93123/dynamixel-neck_controller-9*.log[0m
+[1m[dynamixel/right_arm_controller-11] process has finished cleanly
+log file: /home/gerbera/.ros/log/2016b438-98a3-11e5-ab4d-9c2a70c93123/dynamixel-right_arm_controller-11*.log[0m
+[1m[dynamixel/left_gripper_controller-14] process has finished cleanly
+log file: /home/gerbera/.ros/log/2016b438-98a3-11e5-ab4d-9c2a70c93123/dynamixel-left_gripper_controller-14*.log[0m
+[33m[WARN] [WallTime: 1449026216.712753] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.713193] [right_arm_controller] not all dependencies started, still waiting for ['right_shoulder_2_controller', 'right_shoulder_1_controller', 'right_wrist_2_controller', 'right_wrist_1_controller', 'right_wrist_3_controller', 'right_elbow_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.713490] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.773002] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.773507] [torso_controller] not all dependencies started, still waiting for ['prismatic_controller']...
+[0m[INFO] [WallTime: 1449026216.774063] Controller tilt_controller successfully started.
+[1mprocess[depth_registered/points_xyzrgb_sw_registered-44]: started with pid [4704][0m
+[33m[WARN] [WallTime: 1449026216.885083] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.885481] [right_arm_controller] not all dependencies started, still waiting for ['right_shoulder_2_controller', 'right_shoulder_1_controller', 'right_wrist_2_controller', 'right_wrist_1_controller', 'right_wrist_3_controller', 'right_elbow_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.885807] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026216.886100] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026216.929056] Controller prismatic_controller successfully started.
+[1mprocess[depth_registered/depth_registered_rectify_depth-45]: started with pid [4776][0m
+[1m[dynamixel/right_gripper_controller-13] process has finished cleanly
+log file: /home/gerbera/.ros/log/2016b438-98a3-11e5-ab4d-9c2a70c93123/dynamixel-right_gripper_controller-13*.log[0m
+[33m[WARN] [WallTime: 1449026217.111291] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.111689] [right_arm_controller] not all dependencies started, still waiting for ['right_shoulder_2_controller', 'right_wrist_2_controller', 'right_wrist_1_controller', 'right_wrist_3_controller', 'right_elbow_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.111975] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.112281] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026217.112847] Controller right_shoulder_1_controller successfully started.
+[33m[WARN] [WallTime: 1449026217.164775] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.165392] [right_arm_controller] not all dependencies started, still waiting for ['right_wrist_2_controller', 'right_wrist_1_controller', 'right_wrist_3_controller', 'right_elbow_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.165865] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.166275] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026217.166836] Controller right_shoulder_2_controller successfully started.
+[1m[dynamixel/torso_controller-10] process has finished cleanly
+log file: /home/gerbera/.ros/log/2016b438-98a3-11e5-ab4d-9c2a70c93123/dynamixel-torso_controller-10*.log[0m
+[1mprocess[depth_registered/points_xyzrgb_hw_registered-46]: started with pid [4857][0m
+[33m[WARN] [WallTime: 1449026217.480847] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.481546] [right_arm_controller] not all dependencies started, still waiting for ['right_wrist_2_controller', 'right_wrist_1_controller', 'right_wrist_3_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.482029] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.482452] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026217.483048] Controller right_elbow_controller successfully started.
+[1mprocess[tf/external_cam_to_kinect-47]: started with pid [4905][0m
+[33m[WARN] [WallTime: 1449026217.597130] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.597467] [right_arm_controller] not all dependencies started, still waiting for ['right_wrist_2_controller', 'right_wrist_3_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.597729] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.598040] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026217.598493] Controller right_wrist_1_controller successfully started.
+[1mprocess[dynamixel/joint_state_publisher-48]: started with pid [4961][0m
+[1mprocess[robot_state_publisher-49]: started with pid [4980][0m
+[33m[WARN] [WallTime: 1449026217.896571] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.897063] [right_arm_controller] not all dependencies started, still waiting for ['right_wrist_3_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.897637] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.898070] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026217.898645] Controller right_wrist_2_controller successfully started.
+/opt/ros/hydro/lib/robot_state_publisher/robot_state_publisher
+[33m[ WARN] [1449026217.924148850]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.[0m
+[33m[WARN] [WallTime: 1449026217.961049] [right_gripper_controller] not all dependencies started, still waiting for ['right_gripper_joint_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.986486] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026217.986889] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026217.987326] Controller right_wrist_3_controller successfully started.
+[33m[WARN] [WallTime: 1449026218.086910] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller', 'left_shoulder_1_controller']...
+[0m[33m[WARN] [WallTime: 1449026218.087493] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026218.087974] Controller right_gripper_joint_controller successfully started.
+[33m[WARN] [WallTime: 1449026218.121775] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_shoulder_2_controller', 'left_wrist_3_controller']...
+[0m[33m[WARN] [WallTime: 1449026218.122196] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026218.122787] Controller left_shoulder_1_controller successfully started.
+[33m[WARN] [WallTime: 1449026218.178746] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_elbow_controller', 'left_wrist_1_controller', 'left_wrist_3_controller']...
+[0m[33m[WARN] [WallTime: 1449026218.180011] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026218.181896] Controller left_shoulder_2_controller successfully started.
+[33m[WARN] [WallTime: 1449026218.223230] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_wrist_1_controller', 'left_wrist_3_controller']...
+[0m[33m[WARN] [WallTime: 1449026218.223635] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026218.224071] Controller left_elbow_controller successfully started.
+[33m[WARN] [WallTime: 1449026218.275691] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_2_controller', 'left_wrist_3_controller']...
+[0m[33m[WARN] [WallTime: 1449026218.276178] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026218.276753] Controller left_wrist_1_controller successfully started.
+[33m[WARN] [WallTime: 1449026218.356842] [left_arm_controller] not all dependencies started, still waiting for ['left_wrist_3_controller']...
+[0m[33m[WARN] [WallTime: 1449026218.357198] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026218.358094] Controller left_wrist_2_controller successfully started.
+[33m[WARN] [WallTime: 1449026218.451079] [left_gripper_controller] not all dependencies started, still waiting for ['left_gripper_joint_controller']...
+[0m[INFO] [WallTime: 1449026218.451896] Controller left_wrist_3_controller successfully started.
+[33m[WARN] [WallTime: 1449026218.481807] The specified motor id is not connected and responding.
+[0m[33m[WARN] [WallTime: 1449026218.482186] Available ids: [10, 11, 20, 21, 22, 25, 26, 27, 40, 41, 42, 43, 45, 46, 47, 50]
+[0m[33m[WARN] [WallTime: 1449026218.482471] Specified id: 48
+[0m[31m[ERROR] [WallTime: 1449026218.482921] Initialization failed. Unable to start controller left_gripper_joint_controller
+[0m[1m[dynamixel/dynamixel_controller_spawner-8] process has finished cleanly
+log file: /home/gerbera/.ros/log/2016b438-98a3-11e5-ab4d-9c2a70c93123/dynamixel-dynamixel_controller_spawner-8*.log[0m
+[33m[WARN] [WallTime: 1449026280.060771] Inbound TCP/IP connection failed: connection from sender terminated before handshake header received. 0 bytes were received. Please check sender for additional details.
+[0m[31m[ERROR] [1449026492.609151932]: Connection to joystick device lost unexpectedly. Will reopen.[0m
+[31m[ERROR] [1449026492.609674276]: Couldn't open joystick /dev/input/js0. Will retry every second.[0m
+[31m[external_cam/camera-36] process has died [pid 3917, exit code -11, cmd /opt/ros/hydro/lib/libuvc_camera/camera_node __name:=camera __log:=/home/gerbera/.ros/log/2016b438-98a3-11e5-ab4d-9c2a70c93123/external_cam-camera-36.log].
+log file: /home/gerbera/.ros/log/2016b438-98a3-11e5-ab4d-9c2a70c93123/external_cam-camera-36*.log[0m
+[33m[ WARN] [1449026495.253058407]: Could not grab single echo scan.[0m
+[31m[ERROR] [1449026495.253278010]: Error count exceeded limit, reconnecting.[0m
+Traceback (most recent call last):
+  File "/home/gerbera/skuba_athome/src/hardware_bridge/nodes/base_serial.py", line 163, in <module>
+    BaseSerial()
+  File "/home/gerbera/skuba_athome/src/hardware_bridge/nodes/base_serial.py", line 60, in __init__
+    self.mySerialDataGateway.Write(self.start_byte+cmd_msg+self.stop_byte)
+  File "/home/gerbera/skuba_athome/src/hardware_bridge/nodes/SerialDataGateway.py", line 63, in Write
+    self._Serial.write(data)
+  File "/usr/lib/python2.7/dist-packages/serial/serialposix.py", line 485, in write
+    raise SerialException('write failed: %s' % (v,))
+serial.serialutil.SerialException: write failed: [Errno 5] Input/output error
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/threading.py", line 551, in __bootstrap_inner
+    self.run()
+  File "/usr/lib/python2.7/threading.py", line 504, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/gerbera/skuba_athome/src/hardware_bridge/nodes/SerialDataGateway.py", line 50, in _Listen
+    data = self._Serial.read()
+  File "/usr/lib/python2.7/dist-packages/serial/serialposix.py", line 456, in read
+    raise SerialException('device reports readiness to read but returned no data (device disconnected?)')
+SerialException: device reports readiness to read but returned no data (device disconnected?)
+
+Stop connection
+Traceback (most recent call last):
+  File "/opt/ros/hydro/lib/python2.7/dist-packages/rospy/core.py", line 399, in signal_shutdown
+    h()
+  File "/home/gerbera/skuba_athome/src/hardware_bridge/nodes/base_serial.py", line 159, in Stop
+    self.mySerialDataGateway.Write(self.start_byte_dis+'\x00\x00\x00\x00\x00\x00'+self.stop_byte_dis)
+  File "/home/gerbera/skuba_athome/src/hardware_bridge/nodes/SerialDataGateway.py", line 63, in Write
+    self._Serial.write(data)
+  File "/usr/lib/python2.7/dist-packages/serial/serialposix.py", line 485, in write
+    raise SerialException('write failed: %s' % (v,))
+SerialException: write failed: [Errno 5] Input/output error
+[31m[base/base_serial-4] process has died [pid 3253, exit code 1, cmd /home/gerbera/skuba_athome/src/hardware_bridge/nodes/base_serial.py joy_cmd_vel:=/joy/joy_cmd_vel base_vel:=/base/velocity __name:=base_serial __log:=/home/gerbera/.ros/log/2016b438-98a3-11e5-ab4d-9c2a70c93123/base-base_serial-4.log].
+log file: /home/gerbera/.ros/log/2016b438-98a3-11e5-ab4d-9c2a70c93123/base-base_serial-4*.log[0m
+[31m[ERROR] [1449026498.262358136]: Error connecting to Hokuyo: Could not open serial Hokuyo:
+/dev/ttyACM0 @ 115200
+could not open serial device.[0m
+[31m[ERROR] [1449026508.264090827]: Error connecting to Hokuyo: Could not open serial Hokuyo:
+/dev/ttyACM0 @ 115200
+could not open serial device.[0m
+[31m[ERROR] [1449026518.266139388]: Error connecting to Hokuyo: Could not open serial Hokuyo:
+/dev/ttyACM0 @ 115200
+could not open serial device.[0m
+^C[robot_state_publisher-49] killing on ex
