@@ -272,7 +272,7 @@ DXL_MODEL_TO_PARAMS = \
            'range_degrees':      360.0,
            'torque_per_volt':    8.4 / 12.0,                       #  8.4 NM @ 12V
            'velocity_per_volt':  (45 * RPM_TO_RADSEC) / 12.0,      #  45 RPM @ 12.0V
-           'rpm_per_tick':       0.114,
+           'rpm_per_tick':       0.0488759,
            'features':           [DXL_CURRENT_L, DXL_TORQUE_CONTROL_MODE, DXL_GOAL_ACCELERATION]
          },
     43: { 'name':               'mark-43',
@@ -317,7 +317,7 @@ DXL_MODEL_TO_PARAMS = \
          },
     48: { 'name':               'marijuana-48',
            'encoder_resolution': 65535,
-           'range_degrees':      120.0,
+           'range_degrees':      90.0,
            'torque_per_volt':    5.3 / 18.5,                       #  5.3 NM @ 18.5V
            'velocity_per_volt':  (64 * RPM_TO_RADSEC) / 18.5,      #  64 RPM @ 18.5V
            'rpm_per_tick':       0.114,
