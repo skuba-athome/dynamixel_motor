@@ -92,21 +92,28 @@ class DynamixelIO(object):
         if self.readback_echo:
             self.ser.read(len(data))
 
-    def __read_response(self, servo_id):
+    def __read_response(self, servo_id, state_shift_error_limit=4):
         data = []
-
+        packet_err = True
         try:
             data.extend(self.ser.read(4))
-            if not data[0:2] == ['\xff', '\xff']: raise Exception('Wrong packet prefix %s' % data[0:2])
+            # print "TEST: ...."
+            # print data
+            for i in range(state_shift_error_limit):
+                if not data[0:2] == ['\xff', '\xff'] and i < state_shift_error_limit:
+                    data = data[1:]
+                    data.extend(self.ser.read(1))
+                elif data[0:2] == ['\xff', '\xff']:
+                    packet_err = False
+                    break
+            if (packet_err): raise Exception('Wrong packet prefix %s' % data[0:2])
             data.extend(self.ser.read(ord(data[3])))
             data = array('B', ''.join(data)).tolist() # [int(b2a_hex(byte), 16) for byte in data]
         except Exception, e:
             raise DroppedPacketError('Invalid response received from motor %d. %s' % (servo_id, e))
-
         # verify checksum
         checksum = 255 - sum(data[2:-1]) % 256
         if not checksum == data[-1]: raise ChecksumError(servo_id, data, checksum)
-
         return data
 
     def read(self, servo_id, address, size):
